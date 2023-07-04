@@ -7,7 +7,6 @@ router.post("/add", async (req, res) => {
   const { place_id, fuel_price, isOpenNow, working_hours } = req.body;
   try {
     const existingPlace = await Place.findOne({ place_id });
-
     if (existingPlace) {
       return res
         .status(400)

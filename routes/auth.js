@@ -26,7 +26,6 @@ router.post("/register", async (req, res) => {
       email,
       password: hashedPassword,
     });
-
     const token = jwt.sign({ id: newUser._id }, jwtSecret);
     res.json({ token });
   } catch (error) {
