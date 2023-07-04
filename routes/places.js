@@ -3,7 +3,6 @@ import Place from "../models/place.js";
 import "dotenv/config.js";
 
 const router = express.Router();
-
 router.post("/add", async (req, res) => {
   const { place_id, fuel_price, isOpenNow, working_hours } = req.body;
   try {
