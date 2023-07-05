@@ -15,6 +15,10 @@ const placeSchema = new mongoose.Schema({
       required: true,
     },
     working_hours: { type: String, required: false },
+    place_type: {
+      type: String,
+      required: true
+    }
   },
   fuel: {
     fuel_types: [
