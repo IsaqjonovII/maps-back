@@ -8,7 +8,7 @@ const placeSchema = new mongoose.Schema({
     },
     name: {
       type: String,
-      required: true
+      required: true,
     },
     isOpenNow: {
       type: Boolean,
@@ -21,7 +21,7 @@ const placeSchema = new mongoose.Schema({
     place_type: {
       type: String,
       required: false,
-    }
+    },
   },
   fuel: {
     fuel_types: [
@@ -41,14 +41,15 @@ const placeSchema = new mongoose.Schema({
         isAvailable: {
           type: Boolean,
           required: true,
-        } 
-      }
+        },
+      },
     ],
+    required: false,
   },
   discount: {
     type: String,
     required: false,
-  },  
+  },
 });
 
 export default mongoose.model("Place", placeSchema);
