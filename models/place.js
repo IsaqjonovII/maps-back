@@ -20,7 +20,7 @@ const placeSchema = new mongoose.Schema({
     },
     place_type: {
       type: String,
-      required: true,
+      required: false,
     }
   },
   fuel: {

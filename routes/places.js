@@ -47,33 +47,4 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.put("/edit/:id", async (req, res) => {
-  const { place: { place_id, isOpenNow, name, working_hours }, fuel: {
-    fuel_types
-  }, discount } = req.body;
-
-  try {
-    const existingPlace = await Place.findById(place_id);
-
-    if (!existingPlace) {
-      return res
-        .status(404)
-        .json({ status: "error", error: "Place not found" });
-    }
-
-    existingPlace.place.place_id = place_id;
-    existingPlace.fuel.fuel_types = fuel_types;
-    existingPlace.place.isOpenNow = isOpenNow;
-    existingPlace.place.working_hours = working_hours;
-    existingPlace.discount = discount
-
-    const updatedPlace = await existingPlace.save();
-
-    res.json({ status: "ok", updated_place: updatedPlace });
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ error: "Server error" });
-  }
-});
-
 export default router;
