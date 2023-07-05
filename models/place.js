@@ -44,7 +44,6 @@ const placeSchema = new mongoose.Schema({
         },
       },
     ],
-    required: false,
     price: {
       type: [String, Number],
       required: false,
