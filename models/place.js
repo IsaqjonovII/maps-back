@@ -35,7 +35,7 @@ const placeSchema = new mongoose.Schema({
           required: true,
         },
         price: {
-          type: String || Number,
+          type: [String, Number],
           required: true,
         },
         isAvailable: {
@@ -46,7 +46,7 @@ const placeSchema = new mongoose.Schema({
     ],
     required: false,
     price: {
-      type: String || Number,
+      type: [String, Number],
       required: false,
     },
     limit: {
