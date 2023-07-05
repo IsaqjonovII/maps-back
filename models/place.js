@@ -45,6 +45,14 @@ const placeSchema = new mongoose.Schema({
       },
     ],
     required: false,
+    price: {
+      type: String || Number,
+      required: false,
+    },
+    limit: {
+      type: String,
+      required: false,
+    },
   },
   discount: {
     type: String,
