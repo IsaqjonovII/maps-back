@@ -14,10 +14,13 @@ const placeSchema = new mongoose.Schema({
       type: Boolean,
       required: true,
     },
-    working_hours: { type: String, required: false },
+    working_hours: {
+      type: String,
+      required: false,
+    },
     place_type: {
       type: String,
-      required: true
+      required: true,
     }
   },
   fuel: {
@@ -37,7 +40,7 @@ const placeSchema = new mongoose.Schema({
         },
         isAvailable: {
           type: Boolean,
-          require: true
+          required: true,
         } 
       }
     ],
@@ -47,4 +50,5 @@ const placeSchema = new mongoose.Schema({
     required: false,
   },  
 });
+
 export default mongoose.model("Place", placeSchema);
